@@ -64,7 +64,7 @@ def plot_3d(x, y, z, target, judged, weight, param):
     plt.savefig("PLOT_3D.jpg")
     plt.show()
 
-def NN_3D(file_name, itr=20, weight=[-0.5, 0.7, 0.7, 0.1], param=[0, 0], alpha=0.01):
+def NN_3D(file_name, itr=30, weight=[-0.5, 0.7, 0.7, 0.1], param=[0, 0], alpha=0.01):
     # フィルの読み込み
     ev, target = import_data(file_name)
     # 閾値をノードに追加
@@ -81,7 +81,7 @@ def NN_3D(file_name, itr=20, weight=[-0.5, 0.7, 0.7, 0.1], param=[0, 0], alpha=0
         plot_3d(ev[:, 1], ev[:, 2], ev[:, 3], target, judged, weight, param)
     plot_3d(ev[:, 1], ev[:, 2], ev[:, 3], target, judged, weight, param)
 
-def NN_2D(file_name, itr=11, weight=[-0.5, 0.7, 0.3], param=[0, 0], alpha=0.01):
+def NN_2D(file_name, itr=30, weight=[-0.5, 0.7, 0.3], param=[0, 0], alpha=0.01):
     ev, target = import_data(file_name)
 
     ev = np.insert(ev, 0, 1, axis=1)
